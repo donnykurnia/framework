@@ -787,7 +787,7 @@ return 'foo!'; });
         $router = $this->getRouter();
         $router->resource('foo', 'FooController');
         $routes = $router->getRoutes();
-        $this->assertCount(8, $routes);
+        $this->assertCount(7, $routes);
 
         $router = $this->getRouter();
         $router->resource('foo', 'FooController', ['only' => ['show', 'destroy']]);
@@ -799,7 +799,7 @@ return 'foo!'; });
         $router->resource('foo', 'FooController', ['except' => ['show', 'destroy']]);
         $routes = $router->getRoutes();
 
-        $this->assertCount(6, $routes);
+        $this->assertCount(5, $routes);
 
         $router = $this->getRouter();
         $router->resource('foo-bars', 'FooController', ['only' => ['show']]);
